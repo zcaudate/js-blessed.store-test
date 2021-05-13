@@ -73,7 +73,7 @@ function App(props){
 }
 
 // js-blessed.store-test.main/__init__
-// 1hbaetmewojmt;
+// urhb7gwz05yo;
 b.run((
   <App></App>
   ),"JS Blessed Store Test");
