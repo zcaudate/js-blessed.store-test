@@ -1,8 +1,8 @@
 # Issue with Suspense
 
 There is a current bug with jotai and suspense. Maybe it's because I'm
-<span class="spurious-link"
-target="using it wrong">*<https://github.com/zcaudate/js-blessed.store-test/blob/master/src/main.js#L30-L34>*</span>.
+[using it
+wrong](https://github.com/zcaudate/js-blessed.store-test/blob/master/src/main.js#L30-L34).
 Once the **FETCH** button is clicked, which sets the atom (initially
 null) with a promise:
 
