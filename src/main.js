@@ -1,4 +1,6 @@
 import React from 'react'
+import * as jotai from 'jotai'
+import * as jotaiUtils from 'jotai/utils'
 
 import r from './js/react'
 import s from './js/react/store'
@@ -18,7 +20,13 @@ const UserData = s.createRecord(
 // js-blessed.store-test.main/StoreComponent
 function StoreComponent(props){
   let [val,setVal] = s.useRecordDatom(UserData);
-  if(!val){
+  let [fetching,setFetching] = React.useState(false);
+  if(fetching){
+    return (
+      <box>LOADING ...</box>
+      );
+  }
+  else if(!val){
     return (
       <box shrink={true}><box top={1}
           shrink={true}
@@ -27,11 +35,13 @@ function StoreComponent(props){
           mouse={true}
           shrink={true}
           style={{"bg":"blue","fg":"white","hover":{"bg":"black","fg":"white"}}}
-          onClick={() => setVal(new Promise(function (resolve,reject){
-            setTimeout(function (){
-              resolve("SUCCESS");
-            },300);
-          }))}
+          onClick={function (){
+            setVal(new Promise(function (resolve,reject){
+              setTimeout(function (){
+                resolve("SUCCESS");
+              },300);
+            }));
+          }}
           content=" FETCH "></button></box>
       );
   }
@@ -73,7 +83,7 @@ function App(props){
 }
 
 // js-blessed.store-test.main/__init__
-// urhb7gwz05yo;
+// 1k1ziig0co2t1;
 b.run((
   <App></App>
   ),"JS Blessed Store Test");

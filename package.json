@@ -11,7 +11,7 @@
     "react-blessed" : "0.7.0",
     "chalk" : "^4.1.0",
     "javascript-time-ago" : "^2.3.4",
-    "jotai" : "^0.16.3",
+    "jotai" : "https://pkg.csb.dev/pmndrs/jotai/commit/b246b77a/jotai",
     "valtio" : "^1.0.4"
   },
   "devDependencies" : {
